@@ -1,1 +1,1 @@
-web:gunicorn a_virtual_track.wsgi
+web: gunicorn a_virtual_track.wsgi
