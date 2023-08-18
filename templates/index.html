@@ -3,18 +3,32 @@
 {% block content %}
 
 
-<div class="row pt-3">
+<div class="container">
     {% for post in post_list %}
-    <div class="card p-2" style="width: 33%;">
-        {% if "placeholder" in post.image.url %}
-        {% else %}
-        <img class="card-img-top" src=" {{ post.image.url }}">
-        {% endif %}
-        <div class="card-body">
-            <h5 class="card-title"><a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></h5>
-            <p class="card-text">Author: {{ post.author }}</p>
-            <p class="card-text">{{ post.created_on}}</p>
+    <div class="container ml-3 mt-2">
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="container">
+                        {% if "placeholder" in post.image.url %}
+                        {% else %}
+                        <img class="rounded post-picture" src=" {{ post.image.url }}">
+                    {% endif %}
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></h5>
+                        <p class="card-text">Author: {{ post.author }}</p>
+                        <p class="card-text">{{ post.created_on}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        
+        
+        
     </div>
     {% endfor %}
     {% if is_paginated %}

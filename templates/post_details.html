@@ -1,4 +1,6 @@
+{% extends "base.html" %}
 
+{% block content %}
 
 <h1>{{ post.title }}</h1>
 <br>
@@ -9,3 +11,5 @@
         <p class="card-text">Author: {{ post.author }}</p>
         <p class="card-text">{{ post.created_on}}</p>
         <p class="card-text">{{ post.content|safe }}</p>
+
+{%endblock%}

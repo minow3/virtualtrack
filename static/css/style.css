@@ -4,7 +4,7 @@ body {
     font-size: 20px;
     line-height: 1.7;
     color: #fff;
-    background: #392338;
+    background-image: linear-gradient(to right, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
   }
 
 .navbar-custom {
@@ -21,4 +21,15 @@ body {
     .container-wrap {
       width: 100%;
     }
+}
+
+.shaded {
+    background-color: gray;
+    opacity: 90%;
+    
+}
+
+.post-picture {
+    max-width: 300px;
+    max-height: 300px;
 }
