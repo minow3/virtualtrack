@@ -5,7 +5,7 @@ from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('author', 'title', 'slug', 'category', 'content', 'image', 'status')
+        fields = ('title', 'slug', 'category', 'content', 'image', 'status')
         
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
