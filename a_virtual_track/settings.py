@@ -11,11 +11,16 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from django.conf import settings
+from django.conf.urls.static import static
 import os
 import dj_database_url
 
 if os.path.isfile('env.py'):
     import env
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -60,6 +65,15 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'a_virtual_track.urls'
+
+SUMMERNOTE_THEME = 'bs5'
+SUMMERNOTE_CONFIG = {
+   'iframe': False, 
+   'summernote': {
+        'width': '100%',
+        'height': '480',
+   }
+}
 
 TEMPLATES = [
     {
