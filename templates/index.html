@@ -22,6 +22,7 @@
                         <h5 class="card-title"><a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></h5>
                         <p class="card-text">Author: {{ post.author }}</p>
                         <p class="card-text">{{ post.created_on}}</p>
+                        <a class="btn btn-warning" href="{% url 'update_post' post.pk %}" role="button">Edit</a>
                     </div>
                 </div>
             </div>

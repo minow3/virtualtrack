@@ -11,5 +11,6 @@
         <p class="card-text">Author: {{ post.author }}</p>
         <p class="card-text">{{ post.created_on}}</p>
         <p class="card-text">{{ post.content|safe }}</p>
+        <a class="btn btn-warning" href="{% url 'update_post' post.pk %}" role="button">Edit</a>
 
 {%endblock%}
