@@ -23,6 +23,7 @@
                         <p class="card-text">Author: {{ post.author }}</p>
                         <p class="card-text">{{ post.created_on}}</p>
                         <a class="btn btn-warning" href="{% url 'update_post' post.pk %}" role="button">Edit</a>
+                        <a class="btn btn-danger" href="{% url 'delete_post' post.pk %}" role="button">Delete</a>
                     </div>
                 </div>
             </div>

@@ -12,5 +12,6 @@
         <p class="card-text">{{ post.created_on}}</p>
         <p class="card-text">{{ post.content|safe }}</p>
         <a class="btn btn-warning" href="{% url 'update_post' post.pk %}" role="button">Edit</a>
+        <a class="btn btn-danger" href="{% url 'delete_post' post.pk %}" role="button">Delete</a>
 
 {%endblock%}
