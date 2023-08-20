@@ -22,8 +22,10 @@
                         <h5 class="card-title"><a href="{% url 'post-detail' post.pk %}">{{ post.title }}</a></h5>
                         <p class="card-text">Author: {{ post.author }}</p>
                         <p class="card-text">{{ post.created_on}}</p>
-                        <a class="btn btn-warning" href="{% url 'update_post' post.pk %}" role="button">Edit</a>
-                        <a class="btn btn-danger" href="{% url 'delete_post' post.pk %}" role="button">Delete</a>
+                        {% if user.is_staff %}
+                            <a class="btn btn-warning" href="{% url 'update_post' post.pk %}" role="button">Edit</a>
+                            <a class="btn btn-danger" href="{% url 'delete_post' post.pk %}" role="button">Delete</a>
+                        {% endif %} 
                     </div>
                 </div>
             </div>

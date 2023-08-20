@@ -1,21 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% if user.is_staff %}
 <div class="container m2">
-    <h1>Update Post...</h1>
+    <h1>Registration...</h1>
     <br>
     <div class="form-group">
         <form method="POST" enctype='multipart/form-data'>
             {% csrf_token %}
             {{ form.as_p|safe }}
-            <button class="btn btn-warning mb-3">Update</button>
+            <button class="btn btn-warning mb-3">Register</button>
         </form>
     </div>
+    
 </div>
-{% else %}
-<div class="container m-3 pb-5">
-    <h2>You are not authorized!!!</h2>
-</div>
-{% endif %}
 {% endblock %}
