@@ -1,3 +1,6 @@
+
+from django.shortcuts import render, get_object_or_404
+from django.views import View
 from django.views import generic
 from .models import Post
 from .forms import PostForm
@@ -12,6 +15,7 @@ class PostList(generic.ListView):
 class PostDetailView(generic.DetailView):
     model = Post
     template_name = 'post_details.html'
+
     
 class AddPostView(generic.CreateView):
     model = Post

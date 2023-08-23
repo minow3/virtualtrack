@@ -6,23 +6,12 @@ from django.urls import reverse
 
 STATUS = ((0, "Draft"), (1, "Approved"))
 
-class Category(models.Model):
-    name = models.CharField(max_length=100, default='Category',)
-    slug = models.SlugField(max_length=100, unique=True)
-    
-    class Meta: 
-        verbose_name_plural = "Categories"
-    
-    def __str__(self):
-        return self.name
-
 class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
     title = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=250, unique=True)
-    category = models.ForeignKey(Category, null=True, on_delete=models.CASCADE)
     content = SummernoteTextField()
     image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
