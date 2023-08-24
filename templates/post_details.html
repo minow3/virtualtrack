@@ -4,6 +4,7 @@
 
 <h1>{{ post.title }}</h1>
 <br>
+<div class="container ml-3 mt-2">
 {% if "placeholder" in post.image.url %}
         {% else %}
         <img class="card-img-top" src=" {{ post.image.url }}">
@@ -15,5 +16,5 @@
                 <a class="btn btn-warning" href="{% url 'update_post' post.pk %}" role="button">Edit</a>
                 <a class="btn btn-danger" href="{% url 'delete_post' post.pk %}" role="button">Delete</a>
         {% endif %}
-
+</div>
 {%endblock%}
